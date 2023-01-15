@@ -3,16 +3,30 @@ package TestingProject.pages;
 public class AllPages {
 
     public AllPages(){}
-    //private LoginPage loginPage;
-    //private PurchaseProductCreatePage purchaseProductCreatePage;
 
+    private MainPage mainPage;
+    private LoginSignupPage loginSignupPage;
+    private AccountInformationPage accountInformationPage;
 
-    /*
-    public ClaimsClaimEditPage claimsClaimEditPage(){
-        if (claimsClaimEditPage == null){
-            claimsClaimEditPage = new ClaimsClaimEditPage();
+    public MainPage mainPage(){
+        if (mainPage == null){
+            mainPage = new MainPage();
         }
-        return claimsClaimEditPage;
+        return mainPage;
     }
-    */
+
+    public LoginSignupPage loginSignupPage(){
+        if (loginSignupPage == null){
+            loginSignupPage = new LoginSignupPage();
+        }
+        return loginSignupPage;
+    }
+
+    public AccountInformationPage accountInformationPage(){
+        if (accountInformationPage == null){
+            accountInformationPage = new AccountInformationPage();
+        }
+        return accountInformationPage;
+    }
+
 }

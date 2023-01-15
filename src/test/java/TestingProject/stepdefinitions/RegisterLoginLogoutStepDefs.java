@@ -6,6 +6,10 @@ import TestingProject.utilities.Driver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
+import org.openqa.selenium.By;
+
+import java.util.Random;
 
 public class RegisterLoginLogoutStepDefs {
 
@@ -19,38 +23,46 @@ public class RegisterLoginLogoutStepDefs {
 
     @Given("Verify that home page is visible successfully")
     public void verify_that_home_page_is_visible_successfully() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+
+        Assert.assertTrue(elements.mainPage().mainPageCarousel.isDisplayed());
     }
 
     @Then("Click on Signup \\/ Login button")
     public void click_on_signup_login_button() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+
+        elements.mainPage().signupLoginButton.click();
     }
 
     @Then("Verify New User Signup! is visible")
     public void verify_new_user_signup_is_visible() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+
+        Assert.assertTrue(elements.loginSignupPage().newUserSignupText.isDisplayed());
+        Assert.assertEquals("New User Signup!", elements.loginSignupPage().newUserSignupText.getText());
     }
 
     @Then("Enter name and email address")
-    public void enter_name_and_email_address() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+    public void enter_name_and_email_address() throws InterruptedException {
+
+        elements.loginSignupPage().signupName.sendKeys("Fakename");
+
+        Thread.sleep(500);
+
+        Random random = new Random();
+        int randomNumber = random.nextInt(1000);
+        elements.loginSignupPage().signupEmail.sendKeys("fakemail" + randomNumber + "@gmail.com");
     }
 
     @When("Click Signup button")
     public void click_signup_button() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+
+        elements.loginSignupPage().signupButton.click();
     }
 
     @When("Verify that ENTER ACCOUNT INFORMATION is visible")
-    public void verify_that_enter_account_information_is_visible() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+    public void verify_that_enter_account_information_is_visible() throws InterruptedException {
+        Thread.sleep(500);
+        Assert.assertTrue(elements.accountInformationPage().enterAccountInformationText.isDisplayed());
+        Assert.assertEquals("ENTER ACCOUNT INFORMATION", elements.accountInformationPage().enterAccountInformationText.getText());
     }
 
     @When("Fill details: Title, Name, Email, Password, Date of birth")
