@@ -2,11 +2,13 @@ package TestingProject.pages;
 
 public class AllPages {
 
+
     public AllPages(){}
 
     private MainPage mainPage;
     private LoginSignupPage loginSignupPage;
     private AccountInformationPage accountInformationPage;
+
 
     public MainPage mainPage(){
         if (mainPage == null){
@@ -28,5 +30,6 @@ public class AllPages {
         }
         return accountInformationPage;
     }
+
 
 }

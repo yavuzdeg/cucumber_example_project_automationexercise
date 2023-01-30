@@ -22,4 +22,19 @@ public class LoginSignupPage {
 
     @FindBy(xpath = "//*[@class='signup-form']//*[@class='btn btn-default']")
     public WebElement signupButton;
+
+    @FindBy(xpath = "//*[@class='login-form']/h2")
+    public WebElement loginAccountText;
+
+    @FindBy(xpath = "(//*[@name='email'])[1]")
+    public WebElement loginEmail;
+
+    @FindBy(xpath = "//*[@name='password']")
+    public WebElement loginPassword;
+
+    @FindBy(xpath = "//*[@class='login-form']//*[@class='btn btn-default']")
+    public WebElement loginButton;
+
+    @FindBy(xpath = "//*[@id='form']//p")
+    public WebElement incorrectEmailPassword;
 }
